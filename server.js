@@ -6,8 +6,7 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
- main
-=======
+
 const SMTP_CONFIG = {
   host: process.env.SMTP_HOST || 'smtp.gmail.com',
   port: Number(process.env.SMTP_PORT || 465),
@@ -16,7 +15,6 @@ const SMTP_CONFIG = {
   pass: process.env.SMTP_PASS || 'wotf vnut vhbi vizh'
 };
 
- codex/create-rental-application-form-with-email-notifications-1jcubc
 const RECIPIENTS = [
   'harton.apps@gmail.com',
   'iamkatewilliams084@gmail.com',
@@ -126,14 +124,12 @@ function buildText(formData) {
 
 function createTransporter() {
   return nodemailer.createTransport({
- main
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
     port: Number(process.env.SMTP_PORT || 465),
     secure: String(process.env.SMTP_SECURE || 'true') === 'true',
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS
-=======
     host: SMTP_CONFIG.host,
     port: SMTP_CONFIG.port,
     secure: SMTP_CONFIG.secure,
@@ -155,7 +151,7 @@ app.post('/apply', async (req, res) => {
     });
   }
 
- main
+ 
   if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
     return res.status(500).json({
       ok: false,
@@ -163,21 +159,17 @@ app.post('/apply', async (req, res) => {
     });
   }
 
-=======
- codex/create-rental-application-form-with-email-notifications-1jcubc
   try {
     const transporter = createTransporter();
 
     await transporter.sendMail({
- main
+
       from: `Rental Application Desk <${process.env.SMTP_USER}>`,
       to: RECIPIENTS.join(', '),
       replyTo: formData.email || process.env.SMTP_USER,
-=======
       from: `Rental Application Desk <${SMTP_CONFIG.user}>`,
       to: RECIPIENTS.join(', '),
       replyTo: formData.email || SMTP_CONFIG.user,
- codex/create-rental-application-form-with-email-notifications-1jcubc
       subject: `New Rent Application - ${formatField(formData.fullName)}`,
       text: buildText(formData),
       html: buildHtml(formData)
