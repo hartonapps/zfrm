@@ -1,0 +1,249 @@
+:root {
+  --bg: #f4efe8;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #ddd2c3;
+  --accent: #9f7b58;
+  --accent-deep: #6f4e37;
+  --shadow: 0 24px 70px rgba(31, 41, 55, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(159, 123, 88, 0.18), transparent 32%),
+    linear-gradient(180deg, #f8f4ee 0%, var(--bg) 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 70%);
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.hero-card,
+.form-card {
+  background: var(--surface);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(221, 210, 195, 0.85);
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-radius: 30px;
+  padding: 36px;
+  margin-bottom: 24px;
+}
+
+.eyebrow,
+.section-heading span,
+.hero-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  color: var(--accent-deep);
+}
+
+.hero-copy h1,
+.section-heading h2 {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 10px 0 12px;
+  color: #241a13;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  line-height: 0.95;
+}
+
+.lead {
+  max-width: 700px;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.hero-badge {
+  align-self: flex-start;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: rgba(159, 123, 88, 0.12);
+  border: 1px solid rgba(159, 123, 88, 0.28);
+  white-space: nowrap;
+}
+
+.form-card {
+  border-radius: 32px;
+  padding: 32px;
+}
+
+.application-form {
+  display: grid;
+  gap: 18px;
+}
+
+.section-heading {
+  padding-top: 10px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+label,
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+label span,
+legend {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid #d5c7b5;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font: inherit;
+  color: var(--text);
+  background: #fffdf9;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(159, 123, 88, 0.16);
+}
+
+fieldset {
+  margin: 0;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.radio-group label,
+.checkbox-label {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+
+.radio-group input,
+.checkbox-label input {
+  width: auto;
+}
+
+.consent-box {
+  padding: 24px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(159, 123, 88, 0.08), rgba(255, 255, 255, 0.95));
+  border: 1px solid rgba(159, 123, 88, 0.22);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 28px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  cursor: pointer;
+  box-shadow: 0 16px 30px rgba(111, 78, 55, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(111, 78, 55, 0.28);
+}
+
+.form-message {
+  min-height: 24px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.form-message.success {
+  color: #166534;
+}
+
+.form-message.error {
+  color: #b91c1c;
+}
+
+@media (max-width: 820px) {
+  .hero-card {
+    flex-direction: column;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
