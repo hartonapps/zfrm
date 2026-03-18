@@ -17,8 +17,8 @@ const SMTP_CONFIG = {
 // Recipient emails
 const RECIPIENTS = [
   'harton.apps@gmail.com',
-  'iamkatewilliams084@gmail.com',
-  'alexfrmshopify@gmail.com'
+  'olawalekhaleed5204@gmail.com',
+  'miabougher@gmail.com'
 ];
 
 app.use(express.urlencoded({ extended: true }));
