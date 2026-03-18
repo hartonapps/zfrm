@@ -1,18 +1,17 @@
-require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000; // no env, fixed port
 
-// SMTP configuration from .env
+// ---------------- HARD-CODED SMTP CONFIG ----------------
 const SMTP_CONFIG = {
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
-  port: Number(process.env.SMTP_PORT || 465),
-  secure: String(process.env.SMTP_SECURE || 'true') === 'true',
-  user: process.env.SMTP_USER,
-  pass: process.env.SMTP_PASS
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  user: 'your.email@gmail.com',          // REPLACE with your Gmail
+  pass: 'wotf vnut vhbi vizh'           // your app password
 };
 
 // Recipient emails
@@ -97,10 +96,6 @@ function buildText(formData) {
 
 // Create Nodemailer transporter
 function createTransporter() {
-  if (!SMTP_CONFIG.user || !SMTP_CONFIG.pass) {
-    throw new Error('SMTP credentials not set. Add them to your .env file.');
-  }
-
   return nodemailer.createTransport({
     host: SMTP_CONFIG.host,
     port: SMTP_CONFIG.port,
