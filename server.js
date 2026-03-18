@@ -10,7 +10,7 @@ const SMTP_CONFIG = {
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
-  user: 'your.email@gmail.com',          // REPLACE with your Gmail
+  user: 'joseph.ecommexpert@gmail.com',          // REPLACE with your Gmail
   pass: 'wotf vnut vhbi vizh'           // your app password
 };
 
