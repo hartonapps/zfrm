@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rental Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">Elegant • Professional • Secure</p>
+          <h1>Rent Application Form</h1>
+          <p class="lead">
+            Share your rental details in a polished, classic application experience. Every answer is delivered instantly to the reviewing team.
+          </p>
+        </div>
+        <div class="hero-badge">Trusted applicant intake</div>
+      </section>
+
+      <section class="form-card">
+        <form id="rentalApplicationForm" class="application-form">
+          <div class="section-heading">
+            <span>Personal Information</span>
+            <h2>Tell us about yourself</h2>
+          </div>
+          <div class="grid two-col">
+            <label>
+              <span>Full Name <strong>*</strong></span>
+              <input type="text" name="fullName" required />
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" name="phone" />
+            </label>
+            <label>
+              <span>First Name <strong>*</strong></span>
+              <input type="text" name="firstName" required />
+            </label>
+            <label>
+              <span>Last Name <strong>*</strong></span>
+              <input type="text" name="lastName" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" />
+            </label>
+            <label>
+              <span>Date of Birth</span>
+              <input type="date" name="dateOfBirth" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Current Address</span>
+            <h2>Where do you live now?</h2>
+          </div>
+          <div class="grid two-col">
+            <label class="full-width">
+              <span>Street Address <strong>*</strong></span>
+              <input type="text" name="currentAddress" required />
+            </label>
+            <label>
+              <span>City</span>
+              <input type="text" name="currentCity" />
+            </label>
+            <label>
+              <span>State / Region / Province</span>
+              <input type="text" name="currentState" />
+            </label>
+            <label>
+              <span>Postal / Zip Code</span>
+              <input type="text" name="currentZip" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Rental Information</span>
+            <h2>Desired property details</h2>
+          </div>
+          <div class="grid two-col">
+            <label class="full-width">
+              <span>Desired Rental Property Address</span>
+              <input type="text" name="propertyAddress" />
+            </label>
+            <label>
+              <span>City</span>
+              <input type="text" name="propertyCity" />
+            </label>
+            <label>
+              <span>State / Region / Province</span>
+              <input type="text" name="propertyState" />
+            </label>
+            <label>
+              <span>Postal / Zip Code</span>
+              <input type="text" name="propertyZip" />
+            </label>
+            <label>
+              <span>Lease Term</span>
+              <select name="leaseTerm">
+                <option value="">Select a lease term</option>
+                <option>6 months</option>
+                <option>12 months</option>
+                <option>18 months</option>
+                <option>24 months</option>
+                <option>Month-to-month</option>
+              </select>
+            </label>
+            <label>
+              <span>Desired Move-in Date</span>
+              <input type="date" name="moveInDate" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Employment Information</span>
+            <h2>Income and employer details</h2>
+          </div>
+          <div class="grid two-col">
+            <label>
+              <span>Current Employer</span>
+              <input type="text" name="currentEmployer" />
+            </label>
+            <label>
+              <span>Employed Since</span>
+              <input type="date" name="employedSince" />
+            </label>
+            <label>
+              <span>Monthly Income (USD)</span>
+              <input type="number" name="monthlyIncome" min="0" step="0.01" placeholder="USD" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Rental History</span>
+            <h2>Your previous housing details</h2>
+          </div>
+          <div class="grid two-col">
+            <label>
+              <span>Previous Landlord Name</span>
+              <input type="text" name="previousLandlordName" />
+            </label>
+            <label>
+              <span>Reason for Leaving</span>
+              <input type="text" name="reasonForLeaving" />
+            </label>
+            <label class="full-width">
+              <span>Previous Address</span>
+              <input type="text" name="previousAddress" />
+            </label>
+            <label>
+              <span>City</span>
+              <input type="text" name="previousCity" />
+            </label>
+            <label>
+              <span>State / Region / Province</span>
+              <input type="text" name="previousState" />
+            </label>
+            <label>
+              <span>Postal / Zip Code</span>
+              <input type="text" name="previousZip" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Reference Information</span>
+            <h2>Provide a personal reference</h2>
+          </div>
+          <div class="grid two-col">
+            <label>
+              <span>Reference Name</span>
+              <input type="text" name="referenceName" />
+            </label>
+            <label>
+              <span>Reference Phone</span>
+              <input type="tel" name="referencePhone" />
+            </label>
+            <label>
+              <span>Reference First Name</span>
+              <input type="text" name="referenceFirstName" />
+            </label>
+            <label>
+              <span>Reference Last Name</span>
+              <input type="text" name="referenceLastName" />
+            </label>
+          </div>
+
+          <div class="section-heading">
+            <span>Additional Details</span>
+            <h2>Final application questions</h2>
+          </div>
+          <div class="grid two-col">
+            <label>
+              <span>Do you have pets?</span>
+              <select name="hasPets">
+                <option value="">Select one</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>How do you want to pay the application fee?</legend>
+              <div class="radio-group">
+                <label><input type="radio" name="paymentMethod" value="Chime" /> Chime</label>
+                <label><input type="radio" name="paymentMethod" value="PayPal" /> PayPal</label>
+                <label><input type="radio" name="paymentMethod" value="Cash App" /> Cash App</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="consent-box">
+            <label class="checkbox-label">
+              <input type="checkbox" name="consent" value="yes" required />
+              <span>
+                I certify that the information provided in this rental application is true and accurate to the best of my knowledge. I understand that false statements or omissions may result in disqualification or termination of the lease agreement.
+              </span>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Submit Application</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
